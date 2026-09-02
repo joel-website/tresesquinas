@@ -55,7 +55,7 @@ ticked, then navigates to Stripe.
 | `orquesta.jpg` | Live Music section |
 | `profes.png` | Workshop section (Cinthya Tomino & Luciana Sacchetti) |
 | `dj.jpg` | DJ section (Cinthya Tomino) |
-| `video-bp.mp4` | Venue carousel (slide 1, autoplays muted when in view) |
+| `video-bp.mp4` | Venue carousel (slide 1, native muted autoplay + loop) |
 | `parking.webp` | Venue carousel (slide 2) |
 | `logo_web.png` | header (Tango MJ mark) |
 | `3-esq.webp` | footer (event wordmark) |

@@ -161,9 +161,11 @@
 
     var onScreen = false;
 
-    // With reduced motion we never autoplay — show controls and the first
+    // With reduced motion we do not autoplay. Show controls and the first
     // frame instead so the clip is still reachable.
     if (reduceMotion && video) {
+      video.autoplay = false;
+      video.pause();
       video.controls = true;
       video.preload = 'metadata';
     }
