@@ -644,6 +644,76 @@ h1 {
   background: var(--color-detalle);
 }
 
+/* ---------- Artist social links ---------- */
+
+.artist-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.artist-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: var(--border-w) solid var(--color-principal);
+  border-radius: var(--radius-sm);
+  color: var(--color-principal);
+  transition:
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    background-color var(--dur-fast) ease,
+    transform var(--dur-fast) var(--ease-premium);
+}
+
+.artist-links a:hover {
+  color: var(--color-acento);
+  border-color: var(--color-acento);
+  background: rgba(122, 31, 43, 0.05);
+  transform: scale(1.06);
+}
+
+.artist-links .ic {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.artist-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin: 0 0 22px;
+}
+
+.artist-links-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.artist-links-group__name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-principal);
+}
+
+.artist-links-group .artist-links {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artist-links a:hover {
+    transform: none;
+  }
+}
+
 .organizers {
   max-width: 640px;
 }
