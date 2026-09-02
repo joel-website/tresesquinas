@@ -147,4 +147,78 @@
     atZone.observe(tickets);
     if (tail) atZone.observe(tail);
   })();
+
+  /* ---------- 5. Venue carousel (video + parking photo) ---------- */
+  (function carousel() {
+    var root = document.querySelector('[data-carousel]');
+    if (!root) return;
+    var track = root.querySelector('[data-carousel-track]');
+    var dots = Array.prototype.slice.call(
+      root.querySelectorAll('[data-carousel-dots] button')
+    );
+    var video = root.querySelector('[data-venue-video]');
+    if (!track || dots.length < 2) return;
+
+    var onScreen = false;
+
+    // With reduced motion we never autoplay — show controls and the first
+    // frame instead so the clip is still reachable.
+    if (reduceMotion && video) {
+      video.controls = true;
+      video.preload = 'metadata';
+    }
+
+    function currentIndex() {
+      return Math.round(track.scrollLeft / track.clientWidth);
+    }
+
+    function playVideo() {
+      if (!video || !onScreen || reduceMotion) return;
+      if (video.preload === 'none') video.preload = 'metadata';
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
+    function setActive(i) {
+      dots.forEach(function (d, di) {
+        d.setAttribute('aria-current', di === i ? 'true' : 'false');
+      });
+      if (video) {
+        if (i === 0) playVideo();
+        else video.pause();
+      }
+    }
+
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () {
+        track.scrollTo({
+          left: i * track.clientWidth,
+          behavior: reduceMotion ? 'auto' : 'smooth',
+        });
+      });
+    });
+
+    var raf;
+    track.addEventListener('scroll', function () {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        setActive(currentIndex());
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(
+        function (e) {
+          onScreen = e[0].isIntersecting;
+          if (onScreen && currentIndex() === 0) playVideo();
+          else if (video) video.pause();
+        },
+        { threshold: 0.35 }
+      ).observe(root);
+    } else {
+      onScreen = true;
+    }
+
+    setActive(0);
+  })();
 })();

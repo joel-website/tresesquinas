@@ -388,16 +388,46 @@
             </a>
           </div>
 
-          <figure class="venue-figure" data-reveal>
-            <img
-              src="img/parking.webp"
-              alt="The open parking square directly in front of Zalencentrum de Brandpoort"
-              width="1024"
-              height="483"
-              loading="lazy"
-            />
-            <figcaption>Parking is right in front of the entrance.</figcaption>
-          </figure>
+          <div class="venue-carousel" data-carousel data-reveal>
+            <div
+              class="venue-carousel__viewport"
+              data-carousel-track
+              tabindex="0"
+              role="region"
+              aria-label="Venue photos and video"
+            >
+              <figure class="venue-carousel__slide">
+                <video
+                  class="venue-carousel__media"
+                  data-venue-video
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  width="464"
+                  height="832"
+                >
+                  <source src="img/video-bp.mp4" type="video/mp4" />
+                </video>
+                <figcaption>Inside Zalencentrum de Brandpoort.</figcaption>
+              </figure>
+              <figure class="venue-carousel__slide">
+                <img
+                  class="venue-carousel__media"
+                  src="img/parking.webp"
+                  alt="The open parking square directly in front of Zalencentrum de Brandpoort"
+                  width="1024"
+                  height="483"
+                  loading="lazy"
+                />
+                <figcaption>Free parking right in front of the entrance.</figcaption>
+              </figure>
+            </div>
+            <div class="venue-carousel__dots" data-carousel-dots aria-label="Choose a slide">
+              <button type="button" aria-label="Show the venue video" aria-current="true"></button>
+              <button type="button" aria-label="Show the parking photo" aria-current="false"></button>
+            </div>
+          </div>
         </div>
       </section>
 

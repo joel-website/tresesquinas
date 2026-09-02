@@ -798,26 +798,88 @@ h1 {
   color: rgba(44, 44, 42, 0.78);
 }
 
-.venue-figure {
-  margin: 24px 0 0;
+/* Venue carousel — video + parking photo, CSS scroll-snap, minimal JS */
+.venue-carousel {
+  margin: 24px auto 0;
+  max-width: 820px;
+}
+
+.venue-carousel__viewport {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   border: var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  background: #08203f;
   box-shadow: var(--shadow-rest);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.venue-figure img {
+.venue-carousel__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.venue-carousel__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  padding: 16px;
+}
+
+.venue-carousel__media {
   width: 100%;
-  aspect-ratio: 1024 / 483;
-  object-fit: cover;
+  height: clamp(260px, 42vh, 420px);
+  object-fit: contain;
+  border-radius: 10px;
+  background: #08203f;
 }
 
-.venue-figure figcaption {
-  padding: 12px 18px;
+.venue-carousel__slide figcaption {
   font-size: 13px;
-  color: rgba(44, 44, 42, 0.7);
-  background: var(--color-surface);
-  border-top: var(--border-w) solid rgba(7, 58, 124, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.venue-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.venue-carousel__dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: var(--border-w) solid var(--color-principal);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-premium);
+}
+
+.venue-carousel__dots button:hover {
+  transform: scale(1.15);
+}
+
+.venue-carousel__dots button[aria-current='true'] {
+  background: var(--color-detalle);
+  border-color: var(--color-detalle);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .venue-carousel__viewport {
+    scroll-behavior: auto;
+  }
+  .venue-carousel__dots button:hover {
+    transform: none;
+  }
 }
 
 /* ---------- 11. Tickets --------------------------------------------- */
