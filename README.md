@@ -65,7 +65,7 @@ ticked, then navigates to Stripe.
 
 - Event facts (date, schedule, teachers, DJ, orchestra, prices) come from the
   task brief, not from the current live page (which still shows an older event).
-- Schedule: 19:30 workshop · 20:45 milonga · 22:00 live music · 01:00 end.
+- Schedule: 19:30 workshop · 20:30 milonga · live music in two sets (21:15 and 22:45) · 01:00 end.
 - A bar at the venue serves drinks all night (noted in the Venue section).
 - WhatsApp contact for questions: +31 6 27170803 (`wa.me/31627170803`) — button in
   the Tickets section and a link in the footer.
