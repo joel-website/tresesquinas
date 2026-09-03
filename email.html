@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="supported-color-schemes" content="light only" />
+    <title>Payment Confirmation · Milonga Las Tres Esquinas</title>
+  </head>
+
+  <!--
+    Transactional confirmation email for online ticket purchases.
+    Table-based layout + inline styles (email clients strip <style> and don't
+    support flexbox/grid/CSS variables). Palette and type match the landing
+    page: navy #073a7c, mid blue #3782d3, gold #f6b40e, text #2c2c2a, bg #f6f6f6.
+    Merge field {{9.data.object.customer_details.name}} comes from the existing
+    Stripe/Make automation — swap it for your own customer-name token if needed.
+  -->
+
+  <body style="margin:0; padding:0; background-color:#f6f6f6; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+    <!-- Preheader (hidden preview text) -->
+    <div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#f6f6f6;">
+      Your spot at Milonga Las Tres Esquinas is confirmed — Friday 6 November 2026, Landgraaf.
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f6f6f6;">
+      <tr>
+        <td align="center" style="padding:24px 12px;">
+
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px; background-color:#ffffff; border:2px solid #073a7c; border-radius:20px; overflow:hidden;">
+
+            <!-- ============ Header ============ -->
+            <tr>
+              <td style="background-color:#073a7c; padding:28px 32px;">
+                <p style="margin:0 0 10px; font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; font-weight:bold; color:#f6b40e;">
+                  Payment confirmed
+                </p>
+                <h1 style="margin:0; font-family:'Inter',Arial,Helvetica,sans-serif; font-size:26px; line-height:1.2; font-weight:bold; color:#ffffff; letter-spacing:-0.02em;">
+                  Milonga Las Tres Esquinas
+                </h1>
+                <p style="margin:8px 0 0; font-family:'Inter',Arial,Helvetica,sans-serif; font-size:14px; color:#d7e4f5;">
+                  Friday · 6 November 2026 · Landgraaf, Netherlands
+                </p>
+              </td>
+            </tr>
+
+            <!-- ============ Intro ============ -->
+            <tr>
+              <td style="padding:28px 32px 8px; font-family:'Inter',Arial,Helvetica,sans-serif; color:#2c2c2a; font-size:15px; line-height:1.65;">
+                <p style="margin:0 0 14px;">
+                  Hi {{9.data.object.customer_details.name}},
+                </p>
+                <p style="margin:0 0 14px;">
+                  <strong>Thank you!</strong> We have received your payment and your spot at
+                  <strong>Milonga Las Tres Esquinas</strong> is confirmed.
+                </p>
+                <p style="margin:0 0 14px;">
+                  Your online ticket is the <strong>full package</strong>: the workshop and the milonga.
+                  There is nothing else to pay at the door.
+                </p>
+
+                <!-- Button: event page -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 18px;">
+                  <tr>
+                    <td align="center" bgcolor="#f6b40e" style="border-radius:12px; border:2px solid #f6b40e;">
+                      <a href="https://www.tangomj.nl/milonga" target="_blank" style="display:inline-block; padding:13px 28px; font-family:'Inter',Arial,Helvetica,sans-serif; font-size:15px; font-weight:bold; color:#2c2c2a; text-decoration:none;">
+                        View event details
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="margin:0 0 4px;">
+                  Questions? Write to
+                  <a href="mailto:info@tangomj.nl" style="color:#073a7c; font-weight:bold;">info@tangomj.nl</a>
+                  or message us on WhatsApp at
+                  <a href="https://wa.me/31627170803" target="_blank" style="color:#073a7c; font-weight:bold;">+31&nbsp;6&nbsp;27170803</a>.
+                </p>
+              </td>
+            </tr>
+
+            <!-- ============ Where ============ -->
+            <tr>
+              <td style="padding:16px 32px 4px; font-family:'Inter',Arial,Helvetica,sans-serif;">
+                <p style="margin:0 0 10px; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; font-weight:bold; color:#3782d3;">
+                  Where
+                </p>
+                <p style="margin:0 0 6px; font-size:15px; line-height:1.6; color:#2c2c2a;">
+                  📍 <strong style="color:#073a7c;">Zalencentrum de Brandpoort</strong><br />
+                  Hoogstraat 191, 6373 HS Landgraaf, Netherlands
+                </p>
+                <p style="margin:0 0 6px; font-size:14px;">
+                  <a href="https://maps.app.goo.gl/uze1UyYe35vyduzv8" target="_blank" style="color:#073a7c; font-weight:bold;">
+                    Open in Google Maps →
+                  </a>
+                </p>
+                <p style="margin:0; font-size:14px; line-height:1.6; color:#4b4b49;">
+                  🚗 Free parking on the square in front of the venue<br />
+                  🍷 A bar inside serves drinks all night
+                </p>
+              </td>
+            </tr>
+
+            <!-- ============ Schedule ============ -->
+            <tr>
+              <td style="padding:20px 32px 8px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#eef4fb; border-left:4px solid #3782d3; border-radius:8px;">
+                  <tr>
+                    <td style="padding:20px 22px; font-family:'Inter',Arial,Helvetica,sans-serif; color:#2c2c2a; font-size:14px; line-height:1.7;">
+                      <p style="margin:0 0 12px; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; font-weight:bold; color:#3782d3;">
+                        The evening
+                      </p>
+                      <p style="margin:0;">
+                        <strong style="color:#073a7c;">19:30</strong> &nbsp;·&nbsp; Workshop with Cinthya Tomino &amp; Luciana Sacchetti <span style="color:#6b7280;">(all levels)</span><br />
+                        <strong style="color:#073a7c;">20:30</strong> &nbsp;·&nbsp; Milonga begins &nbsp;·&nbsp; DJ Cinthya Tomino<br />
+                        <strong style="color:#073a7c;">21:15</strong> &nbsp;·&nbsp; Live music, first set &nbsp;·&nbsp; Orquesta Conjunto Margot 🎻<br />
+                        <strong style="color:#073a7c;">22:45</strong> &nbsp;·&nbsp; Live music, second set 🎻<br />
+                        <strong style="color:#073a7c;">01:00</strong> &nbsp;·&nbsp; Milonga ends
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:18px 32px 4px; font-family:'Inter',Arial,Helvetica,sans-serif; color:#2c2c2a; font-size:15px; line-height:1.65;">
+                <p style="margin:0;">
+                  We look forward to welcoming you on the dance floor. 💃🕺
+                </p>
+              </td>
+            </tr>
+
+            <!-- ============ Community ============ -->
+            <tr>
+              <td style="padding:22px 32px 8px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2eee6; border-radius:12px;">
+                  <tr>
+                    <td align="center" style="padding:24px 22px; font-family:'Inter',Arial,Helvetica,sans-serif; color:#2c2c2a;">
+                      <p style="margin:0 0 8px; font-size:15px; font-weight:bold; color:#073a7c;">
+                        Stay connected with our tango community
+                      </p>
+                      <p style="margin:0 0 16px; font-size:14px; line-height:1.6;">
+                        Get updates about future events, classes and milongas.
+                      </p>
+                      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+                        <tr>
+                          <td align="center" bgcolor="#25d366" style="border-radius:10px; border:2px solid #25d366;">
+                            <a href="https://chat.whatsapp.com/BDvSLGgAuqW5THotX58YAh" target="_blank" style="display:inline-block; padding:12px 24px; font-family:'Inter',Arial,Helvetica,sans-serif; font-size:14px; font-weight:bold; color:#ffffff; text-decoration:none;">
+                              Join our WhatsApp group
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                      <p style="margin:12px 0 0; font-size:12px; color:#6b7280; line-height:1.5; word-break:break-all;">
+                        Or copy this link:<br />
+                        https://chat.whatsapp.com/BDvSLGgAuqW5THotX58YAh
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- ============ Signature ============ -->
+            <tr>
+              <td style="padding:24px 32px 8px; font-family:'Inter',Arial,Helvetica,sans-serif; color:#073a7c; line-height:1.5;">
+                <img
+                  src="https://tangomj.nl/wp-content/uploads/2023/01/logo_web_transparente2-2048x497.png"
+                  alt="Tango MJ"
+                  width="200"
+                  style="display:block; border:0; outline:none; text-decoration:none; margin-bottom:10px;"
+                />
+                <p style="margin:0; font-size:14px;">
+                  <strong style="font-size:15px;">Maddie Mol &amp; Joel Correa</strong><br />
+                  TangoMJ · Landgraaf, Netherlands
+                </p>
+                <p style="margin:10px 0 0; font-size:13px;">
+                  📞 <a href="tel:+31627170803" style="color:#073a7c; text-decoration:none;">+31 6 27170803</a><br />
+                  📧 <a href="mailto:info@tangomj.nl" style="color:#073a7c; text-decoration:none;">info@tangomj.nl</a><br />
+                  🌐 <a href="https://tangomj.nl" target="_blank" style="color:#073a7c; text-decoration:none;">tangomj.nl</a>
+                </p>
+              </td>
+            </tr>
+
+            <!-- ============ Footer ============ -->
+            <tr>
+              <td style="padding:18px 32px 26px; border-top:1px solid #e4e0d6; font-family:'Inter',Arial,Helvetica,sans-serif;">
+                <p style="margin:0; font-size:12px; color:#6b7280; line-height:1.6;">
+                  You received this email because you bought a ticket to Milonga Las Tres Esquinas.<br />
+                  <a href="https://tangomj.nl/privacy-policy/" target="_blank" style="color:#6b7280;">Privacy Policy</a>
+                  &nbsp;·&nbsp; © 2026 TangoMJ
+                </p>
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
