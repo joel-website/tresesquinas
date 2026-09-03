@@ -47,10 +47,6 @@ Set on the `data-checkout-url` of each `[data-checkout]` button and in the
 JSON-LD offers. The button stays disabled until the Privacy Policy checkbox is
 ticked, then navigates to Stripe.
 
-> ⚠️ The Supporter link was created at €25. After raising the price to €28,
-> update the amount on that Payment Link in the Stripe dashboard (or create a
-> new link and swap the URL here + in `index.html`).
-
 ## Images in use
 
 | File | Where |
