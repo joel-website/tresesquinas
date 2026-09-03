@@ -41,11 +41,15 @@ except Google Fonts / external links need a connection.
 ## Ticket checkout
 
 Early Bird (€20) → `https://buy.stripe.com/00wdR81S1f6e5rHczC4Rq0f`
-Full Price Supporter (€25) → `https://buy.stripe.com/4gM7sKcwFbU2bQ56be4Rq0g`
+Full Price Supporter (€28) → `https://buy.stripe.com/4gM7sKcwFbU2bQ56be4Rq0g`
 
 Set on the `data-checkout-url` of each `[data-checkout]` button and in the
 JSON-LD offers. The button stays disabled until the Privacy Policy checkbox is
 ticked, then navigates to Stripe.
+
+> ⚠️ The Supporter link was created at €25. After raising the price to €28,
+> update the amount on that Payment Link in the Stripe dashboard (or create a
+> new link and swap the URL here + in `index.html`).
 
 ## Images in use
 

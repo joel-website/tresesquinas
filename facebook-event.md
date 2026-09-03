@@ -21,7 +21,7 @@ An evening of Argentine tango in Landgraaf: a workshop, a live orchestra and a l
 
 🎟️ **Tickets**
 🔹 Early Bird · €20
-🔹 Full Price Supporter · €25
+🔹 Full Price Supporter · €28
 Both cover the full package (workshop + milonga).
 At the door you can also pay separately: workshop €15 · milonga €15.
 
@@ -40,6 +40,6 @@ See you on the dance floor! 💫
 
 Workshop 19:30 · Milonga 20:30 · Orquesta Conjunto Margot live in two sets (21:15 & 22:45) 🎻 · DJ Cinthya Tomino
 
-🎟️ Early Bird €20 / Supporter €25 (full package). Workshop & milonga also available separately at the door (€15 each).
+🎟️ Early Bird €20 / Supporter €28 (full package). Workshop & milonga also available separately at the door (€15 each).
 
 👉 Info & tickets: https://www.tangomj.nl/milonga
