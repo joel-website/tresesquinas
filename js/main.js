@@ -157,7 +157,8 @@
     if (slides.length < 2 || reduceMotion) return;
 
     var video = root.querySelector('[data-hero-video]');
-    var HOLD = 6000; // each slide stays ~6s
+    var HOLD = 7000; // image slides stay ~7s
+    var HOLD_VIDEO = 10000; // the venue video slide stays ~10s
     var i = slides.indexOf(root.querySelector('.hero__slide.is-active'));
     if (i < 0) i = 0;
     var timer;
@@ -182,18 +183,23 @@
       playCurrentVideo();
     }
 
-    function tick() {
-      show((i + 1) % slides.length);
+    function schedule() {
+      clearTimeout(timer);
+      var hold = video && slides[i].contains(video) ? HOLD_VIDEO : HOLD;
+      timer = setTimeout(function () {
+        show((i + 1) % slides.length);
+        schedule();
+      }, hold);
     }
 
     function start() {
       playCurrentVideo();
       if (timer) return;
-      timer = setInterval(tick, HOLD);
+      schedule();
     }
 
     function stop() {
-      clearInterval(timer);
+      clearTimeout(timer);
       timer = null;
       if (video) video.pause();
     }
