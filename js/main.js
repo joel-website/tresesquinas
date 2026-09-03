@@ -148,6 +148,69 @@
     if (tail) atZone.observe(tail);
   })();
 
+  /* ---------- 4b. Hero slideshow -------------------------------- */
+  (function heroSlides() {
+    var root = document.querySelector('[data-hero-slides]');
+    if (!root) return;
+
+    var slides = Array.prototype.slice.call(root.querySelectorAll('.hero__slide'));
+    if (slides.length < 2 || reduceMotion) return;
+
+    var video = root.querySelector('[data-hero-video]');
+    var HOLD = 3000; // each slide stays ~3s
+    var i = 0;
+    var timer;
+
+    function show(next) {
+      slides[i].classList.remove('is-active');
+      if (video && slides[i].contains(video)) {
+        video.pause();
+        try {
+          video.currentTime = 0;
+        } catch (e) {}
+      }
+      i = next;
+      slides[i].classList.add('is-active');
+      if (video && slides[i].contains(video)) {
+        if (video.preload === 'none') video.preload = 'auto';
+        var p = video.play();
+        if (p && p.catch) p.catch(function () {});
+      }
+    }
+
+    function tick() {
+      show((i + 1) % slides.length);
+    }
+
+    function start() {
+      if (timer) return;
+      timer = setInterval(tick, HOLD);
+    }
+
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+      if (video) video.pause();
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(
+        function (e) {
+          if (e[0].isIntersecting) start();
+          else stop();
+        },
+        { threshold: 0 }
+      ).observe(root);
+    } else {
+      start();
+    }
+  })();
+
   /* ---------- 5. Venue carousel (video + parking photo) ---------- */
   (function carousel() {
     var root = document.querySelector('[data-carousel]');

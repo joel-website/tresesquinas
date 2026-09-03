@@ -473,17 +473,39 @@ h1 {
   z-index: -2;
 }
 
-.hero__media img {
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s var(--ease-premium);
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+}
+
+.hero__media img,
+.hero__slide video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 38%;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide {
+    transition: none;
+  }
+  .hero__slide:not(.is-active) {
+    display: none;
+  }
+}
+
 .hero__media::after {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     linear-gradient(
       to top,
@@ -827,6 +849,64 @@ h1 {
 
 .note strong {
   color: var(--color-principal);
+}
+
+/* ---------- 9b. Disclosure (details/summary) --------------------- */
+
+.disclosure {
+  margin: 22px 0 0;
+  border: var(--border-w) solid rgba(7, 58, 124, 0.2);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.disclosure > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px clamp(16px, 2.4vw, 22px);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-principal);
+  cursor: pointer;
+  list-style: none;
+}
+
+.disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.disclosure > summary::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-secundario);
+  transition: transform var(--dur-fast) var(--ease-premium);
+}
+
+.disclosure[open] > summary::after {
+  transform: rotate(45deg);
+}
+
+.disclosure__body {
+  padding: 0 clamp(16px, 2.4vw, 22px) clamp(16px, 2.4vw, 22px);
+  border-top: var(--border-w) solid rgba(7, 58, 124, 0.14);
+}
+
+.disclosure__body h3 {
+  margin: 18px 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-principal);
+}
+
+.disclosure__body p {
+  margin: 0;
+  font-size: 15px;
+  color: rgba(44, 44, 42, 0.82);
 }
 
 /* ---------- 10. Venue ------------------------------------------------- */

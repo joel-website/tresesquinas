@@ -162,14 +162,55 @@
 
       <!-- ============ 1. HERO ============ -->
       <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero__media">
-          <img
-            src="img/organizadores.jpg"
-            alt="Dancers and guests gathered on the floor at a Tango MJ milonga"
-            width="1924"
-            height="1082"
-            fetchpriority="high"
-          />
+        <div class="hero__media" data-hero-slides>
+          <div class="hero__slide is-active">
+            <img
+              src="img/organizadores.jpg"
+              alt="Dancers and guests gathered on the floor at a Tango MJ milonga"
+              width="1924"
+              height="1082"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="hero__slide">
+            <img
+              src="img/profes.png"
+              alt="Cinthya Tomino and Luciana Sacchetti, the workshop teachers"
+              width="768"
+              height="1024"
+              loading="lazy"
+            />
+          </div>
+          <div class="hero__slide">
+            <img
+              src="img/orquesta.jpg"
+              alt="Orquesta Conjunto Margot on stage"
+              width="1723"
+              height="763"
+              loading="lazy"
+            />
+          </div>
+          <div class="hero__slide">
+            <img
+              src="img/dj.jpg"
+              alt="Cinthya Tomino, DJ for the milonga"
+              width="1601"
+              height="2048"
+              loading="lazy"
+            />
+          </div>
+          <div class="hero__slide hero__slide--video">
+            <video
+              data-hero-video
+              src="img/video-bp.mp4"
+              muted
+              loop
+              playsinline
+              preload="none"
+              width="464"
+              height="832"
+            ></video>
+          </div>
         </div>
         <div class="container">
           <p class="hero__kicker">
@@ -219,6 +260,16 @@
           </div>
 
           <div class="timeline stagger">
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__time">19:00</div>
+              <div>
+                <p class="timeline__title">Doors open</p>
+                <p class="timeline__detail">
+                  Doors open at 19:00 for anyone who has not registered or paid
+                  for the milonga yet.
+                </p>
+              </div>
+            </div>
             <div class="timeline__item" data-reveal>
               <div class="timeline__time">19:30</div>
               <div>
@@ -317,6 +368,42 @@
                 An hour of practice before the milonga: walking, timing and a
                 comfortable embrace, so you feel ready when the dancing starts.
               </p>
+
+              <details class="disclosure">
+                <summary>More about the teachers</summary>
+                <div class="disclosure__body">
+                  <h3>Cinthya Tomino</h3>
+                  <p>
+                    Argentine tango dancer, teacher, choreographer and DJ. She
+                    trained in Buenos Aires and built an extensive professional
+                    career, taking part in shows, festivals and international
+                    competitions, including the Tango World Championship. For
+                    years she has taught and danced tango across several European
+                    countries, and is currently based in Rotterdam.
+                  </p>
+                  <h3>Luciana Sacchetti</h3>
+                  <p>
+                    Argentine tango dancer and teacher. Her artistic training
+                    began with classical dance, artistic gymnastics and other
+                    stage disciplines before she devoted herself fully to tango.
+                    She started out in Mar del Plata and, over more than 15
+                    years, has deepened her training with renowned maestros and
+                    has taught and performed in Argentina, Europe and the United
+                    States. She is currently based in Rotterdam, where she
+                    continues her work as an artist and teacher.
+                  </p>
+                  <h3>Milonga El Colectivo</h3>
+                  <p>
+                    Cinthya Tomino and Luciana Sacchetti are part of El
+                    Colectivo, a tango project in Rotterdam that runs the
+                    &ldquo;El Colectivo&rdquo; milonga &mdash; a monthly gathering
+                    devoted to Argentine tango, with traditional music, dancing
+                    and a space for the tango community to meet. It takes place on
+                    the fourth Friday of every month in Rotterdam.
+                  </p>
+                </div>
+              </details>
+
               <div class="note">
                 <p>
                   <strong>No online workshop ticket.</strong> The workshop can be
@@ -421,14 +508,19 @@
           <div class="feature">
             <div class="feature__body" data-reveal>
               <span class="eyebrow">The people behind the milonga</span>
-              <h2 id="organizers-heading">Maddie &amp; Joel</h2>
+              <h2 id="organizers-heading">
+                Maddie &amp; Joel <span class="dj-origin">(NL / AR)</span>
+              </h2>
               <p class="lead">
                 Maddie and Joel run Tango MJ in Limburg: classes, coaching and
-                events around Argentine tango.
+                events around Argentine tango. They are building up the tango
+                community in the region, with regular classes every Friday at
+                19:30 at de Brandpoort.
               </p>
               <p>
-                Las Tres Esquinas is their invitation to the wider scene. Come
-                dance, stay late, come back.
+                They created Las Tres Esquinas to bring the milongueros of the
+                region together in one beautiful, friendly place. Come dance,
+                stay late, come back.
               </p>
             </div>
             <div class="feature__media feature__media--wide" data-reveal="right">
