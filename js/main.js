@@ -157,9 +157,17 @@
     if (slides.length < 2 || reduceMotion) return;
 
     var video = root.querySelector('[data-hero-video]');
-    var HOLD = 3000; // each slide stays ~3s
-    var i = 0;
+    var HOLD = 6000; // each slide stays ~6s
+    var i = slides.indexOf(root.querySelector('.hero__slide.is-active'));
+    if (i < 0) i = 0;
     var timer;
+
+    function playCurrentVideo() {
+      if (!video || !slides[i].contains(video)) return;
+      if (video.preload === 'none') video.preload = 'auto';
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }
 
     function show(next) {
       slides[i].classList.remove('is-active');
@@ -171,11 +179,7 @@
       }
       i = next;
       slides[i].classList.add('is-active');
-      if (video && slides[i].contains(video)) {
-        if (video.preload === 'none') video.preload = 'auto';
-        var p = video.play();
-        if (p && p.catch) p.catch(function () {});
-      }
+      playCurrentVideo();
     }
 
     function tick() {
@@ -183,6 +187,7 @@
     }
 
     function start() {
+      playCurrentVideo();
       if (timer) return;
       timer = setInterval(tick, HOLD);
     }

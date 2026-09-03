@@ -163,7 +163,20 @@
       <!-- ============ 1. HERO ============ -->
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero__media" data-hero-slides>
-          <div class="hero__slide is-active">
+          <div class="hero__slide hero__slide--video is-active">
+            <video
+              data-hero-video
+              src="img/video-bp.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              width="464"
+              height="832"
+            ></video>
+          </div>
+          <div class="hero__slide">
             <img
               src="img/organizadores.jpg"
               alt="Dancers and guests gathered on the floor at a Tango MJ milonga"
@@ -198,18 +211,6 @@
               height="2048"
               loading="lazy"
             />
-          </div>
-          <div class="hero__slide hero__slide--video">
-            <video
-              data-hero-video
-              src="img/video-bp.mp4"
-              muted
-              loop
-              playsinline
-              preload="none"
-              width="464"
-              height="832"
-            ></video>
           </div>
         </div>
         <div class="container">
