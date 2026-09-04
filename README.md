@@ -67,7 +67,7 @@ ticked, then navigates to Stripe.
   task brief, not from the current live page (which still shows an older event).
 - Schedule: 19:30 workshop · 20:30 milonga · live music in two sets (21:15 and 22:45) · 01:00 end.
 - A bar at the venue serves drinks all night (noted in the Venue section).
-- WhatsApp contact for questions: +31 6 27170803 (`wa.me/31627170803`) — button in
+- WhatsApp contact for questions: +31 6 21710803 (`wa.me/31621710803`) — button in
   the Tickets section and a link in the footer.
 - Google Maps link and free-parking note reused from the existing tangomj.nl page.
 - No FAQ section, no individual musician names, no separate workshop/milonga
