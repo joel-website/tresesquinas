@@ -632,6 +632,13 @@ h1 {
   margin-bottom: 0;
 }
 
+.feature__topic {
+  margin: 1.2em 0 0.4em;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-principal);
+}
+
 .dj-origin {
   font-size: 0.5em;
   font-weight: 600;
