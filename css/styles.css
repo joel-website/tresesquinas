@@ -1117,6 +1117,14 @@ h1 {
   color: var(--color-principal);
 }
 
+.ticket-card__price-was {
+  margin-right: 0.15em;
+  font-size: 0.55em;
+  font-weight: 500;
+  color: rgba(44, 44, 42, 0.45);
+  text-decoration: line-through;
+}
+
 .ticket-card__note {
   margin: 0 0 22px;
   font-size: 14px;
