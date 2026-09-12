@@ -377,6 +377,38 @@ h1 {
   color: var(--color-principal);
 }
 
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.lang-switch__item {
+  padding: 4px 6px;
+  color: rgba(44, 44, 42, 0.4);
+  cursor: default;
+}
+
+.lang-switch__item.is-active {
+  color: var(--color-principal);
+}
+
+.lang-switch__item:not(:last-child)::after {
+  content: '|';
+  margin-left: 8px;
+  color: rgba(44, 44, 42, 0.25);
+}
+
+@media (max-width: 900px) {
+  .lang-switch {
+    order: -1;
+    margin-bottom: 6px;
+  }
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -776,6 +808,12 @@ h1 {
   max-width: 760px;
 }
 
+.about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .about__statement {
   font-size: clamp(20px, 2.6vw, 28px);
   line-height: 1.4;
@@ -786,6 +824,35 @@ h1 {
 }
 
 /* ---------- 8. Program timeline -------------------------------------- */
+
+.faq-list {
+  display: grid;
+  gap: 18px;
+}
+
+@media (min-width: 720px) {
+  .faq-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.faq-item {
+  padding: clamp(22px, 3vw, 32px);
+  background: var(--color-surface);
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+.faq-item h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.faq-item p {
+  margin: 0;
+  color: rgba(44, 44, 42, 0.82);
+}
 
 .timeline {
   display: grid;
